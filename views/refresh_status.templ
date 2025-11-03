@@ -1,0 +1,22 @@
+package views
+
+import (
+"time"
+
+"github.com/James-Wolfley/steam-achievement-tracker/service"
+)
+
+templ RefreshStatus(steamid string, workers int, stats service.RefreshStats) {
+<div id="refresh-status" class="text-sm text-gray-300">
+  Refreshed { time.Now().Format(time.RFC3339) } ·
+  workers: { workers } ·
+  owned: { stats.Owned } ·
+  queued: { stats.Queued } ·
+  checked: { stats.Checked } ·
+  updated: { stats.Updated } ·
+  skipped: { stats.Skipped } ·
+  cache-skip: { stats.SkippedCached }
+  <!-- auto-reload the table right after showing status -->
+  <div hx-get={ "/ui/results?steamid=" + steamid } hx-target="#results" hx-swap="innerHTML" hx-trigger="load"></div>
+</div>
+}

@@ -8,6 +8,8 @@ go.work
 go.work.sum
 *.log
 env
+.env
 tmp
 views/*_templ.go
 css/output.css
+data
