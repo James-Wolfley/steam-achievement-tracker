@@ -2,8 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  .red-bg {
-    @apply text-redlight text-reddark;
-  }
-}

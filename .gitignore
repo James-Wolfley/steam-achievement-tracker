@@ -10,3 +10,4 @@ go.work.sum
 env
 tmp
 views/*_templ.go
+css/output.css
