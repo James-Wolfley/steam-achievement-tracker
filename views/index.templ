@@ -1,0 +1,27 @@
+package views
+
+type fn func() templ.Component
+
+templ Index(bodyfunc fn) {
+	<head>
+		<title>Go Template</title>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<link rel="stylesheet" href="/css/output.css"/>
+		<script src="https://unpkg.com/htmx.org@2.0.1" integrity="sha384-QWGpdj554B4ETpJJC9z+ZHJcA/i59TyjxEPXiiUgN2WmTyV5OEZWCD6gQhgkdpB/" crossorigin="anonymous"></script>
+		<script src="/scripts/scripts.js"></script>
+		<div>
+			<h4>Header</h4>
+		</div>
+	</head>
+	<body>
+		<div id="body-div">
+			@Home()
+		</div>
+	</body>
+	<footer>
+		<div>
+			<h4>Footer</h4>
+		</div>
+	</footer>
+}
